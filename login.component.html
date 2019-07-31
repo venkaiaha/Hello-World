@@ -1,0 +1,15 @@
+<form [formGroup]="form" (submit)="login($event)">
+    <mat-form-field>
+        <input matInput placeholder="Input" formControlName="username">
+    </mat-form-field>
+    <mat-error
+        *ngIf="form.controls['username'].hasError('required') && (form.controls['username'].dirty || form.controls['username'].touched)">
+        Please enter valid host name</mat-error>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Input" formControlName="password">
+    </mat-form-field><br>
+    <button (click)="login()" type="submit">Login</button>
+</form>
+
+<button (click)="openDialog()" >show popup</button>
